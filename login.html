@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>Edu Mark</title>
+</head>
+
+<body ng-app="myapp" >
+  <div class="container-fluid" ng-controller="myctrl">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4">ĐĂNG NHẬP</h3>
+                <form>
+                  <div class="form-label-group">
+                    <input type="text" id="inputEmail" class="form-control" placeholder="Tên đăng nhập của bạn" required ng-model="student.username">
+                    <label for="inputEmail">Tên đăng nhập</label>
+                  </div>
+  
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu của bạn" required ng-model="student.password">
+                    <label for="inputPassword">Mật khẩu</label>
+                  </div>
+  
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Nhớ mật khẩu</label>
+                  </div>
+                  <button class="btn btn-default btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" ng-click="insert()">Đăng Nhập</button>
+                  <div class="text-center">
+                    <a class="small" href="#">Quên mật khẩu</a></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/jquery-3.3.1.min.js"> </script>
+<script src="js/popper.min.js" > </script>
+<script src="js/bootstrap.min.js"> </script>
+
+</body>
+
+</html>
+<script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope, $http) {
+        // get list sinh vien
+        $scope.student = {};
+          $scope.students = [];
+          $http.get("db/Students.js").then(function(d){
+                $scope.students = d.data;
+            })
+        $scope.insert = function () {
+          var a = $scope.student.username;
+          var b = $scope.student.password;
+          var c = "";
+          var d = "";
+          var id = -1;
+          for (var index = 0; index < $scope.students.length; index++) {
+            c = $scope.students[index].username;
+            d = $scope.students[index].password;
+              if(a.valueOf() == c.valueOf() && b.valueOf() == d.valueOf()){
+                Swal.fire({
+                    title: 'Đăng nhập thành công',
+                    icon: 'success',
+                    html:
+                      '',
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    confirmButtonText:
+                      '<a href="index.html" style="color: white;"><i class="fa fa-thumbs-up"></i> Đồng ý!</a>',
+                    confirmButtonAriaLabel: 'Thumbs up, great!',
+                    cancelButtonText:
+                      '<i class="fa fa-thumbs-down"></i>',
+                    cancelButtonAriaLabel: 'Thumbs down'
+                  })
+               id = index;
+               if ( typeof(Storage) !== "undefined") {
+                    //set sesionStorage
+                    sessionStorage.setItem('index', id);
+               } else {
+                    alert('Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!');
+                }
+                break;  
+              }
+            
+          }
+          if(id == -1){
+            Swal.fire({
+                icon: 'error',
+                title: 'Lỗi...',
+                text: 'Sai tài khoản hoặc mật khẩu!'
+                
+              })
+          }
+          
+            
+        }
+    });
+</script>

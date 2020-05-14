@@ -1,0 +1,40 @@
+<div class="alert alert-secondary mt-3" style="font-size: 20px;" role="alert">
+    <a href="index.html" style="text-decoration: none;">Trang chủ</a> / {{titlee}}
+  </div>
+    <form>
+      <div class="card">
+        <div class="card-header  text-center">
+          <h5><i class="fab fa-android"></i> {{titlee}}</h>
+            <span id="time" class="badge badge-danger float-right">Đếm thời gian</span>
+        </div>
+        <div class="card-body ml-5" ng-repeat="quiz in quizzz | limitTo:1:begin1">
+          <div class="row">
+            <h5 class="card-title col-10">{{begin1+1}}. {{quiz.Text}}</h5>
+            <div class="col-2 "><span class="badge badge-danger">Điểm: {{diem}}</span></div>
+            <input type="hidden" id="myinput" value="{{quiz.AnswerId}}" />
+          </div>
+          <hr/>
+          <div class="row1" ng-repeat="quizs in quiz.Answers | limitTo:4:0">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" ng-model="dapAn.checked" value="{{quizs.Id}}">
+              <label class="form-check-label" for="exampleRadios1">
+                {{quizs.Text}}
+              </label>
+            </div>
+          </div>
+          <input type="hidden" id="myinput1" value="{{dapAn.checked}}">
+          <br/>
+          <button class="btn btn-default bg-danger float-right" ng-click="kiemTra($indexx)" ng-disabled="indexx==1">Trả lời</button>
+        </div>
+        <div class="card-footer text-muted">
+          <nav aria-label="Page navigation example" style="margin-left: 320px;">
+            <ul class="pagination ">
+              <li class="page-item"><a class="page-link" href="" ng-click="first()">First</a></li>
+              <li class="page-item"><a class="page-link" href="" ng-click="prev()">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="" ng-click="next()">Next</a></li>
+              <li class="page-item"><a class="page-link" href="" ng-click="last()">Last</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </form>

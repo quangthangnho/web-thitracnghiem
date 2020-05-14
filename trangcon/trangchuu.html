@@ -1,0 +1,28 @@
+<div class="alert alert-secondary mt-3" style="font-size: 20px;" role="alert">
+    <a href="index.html" style="text-decoration: none;">Trang chủ</a> / Danh mục môn  học
+  </div>
+  <div class="row">
+  <div class="col-md-3 mb-5" ng-repeat="x in list | limitTo : 12:begin" >
+    <div class="card-deck" >
+      <div class="card " >
+        <img src="logos/{{x.Logo}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-primary text-center text-dark">{{x.Name}}</h5>
+          </div>
+          <div class="card-footer">
+            <span class="text-muted"><p class=" text-center font-weight-bold"><a class="text-danger" href="#!quiz/{{x.Id}}/{{x.Name}}" style="text-decoration: none;">Làm bài</a></p></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-n4" >
+    <nav aria-label="Page navigation example" style="margin-left: 420px;">
+      <ul class="pagination ">
+        <li class="page-item"><a class="page-link" href="#" ng-click="first()">Trước</a></li>
+        <li class="page-item"><a class="page-link" href="#" ng-click="prev()">1</a></li>
+        <li class="page-item"><a class="page-link" href="#" ng-click="next()">2</a></li>
+        <li class="page-item"><a class="page-link" href="#" ng-click="last()">Sau</a></li>
+      </ul>
+    </nav>
+  </div>

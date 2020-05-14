@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>Edu Mark</title>
+</head>
+
+<body ng-app="myapp" >
+  <div class="container-fluid" ng-controller="myctrl">
+    <nav class="row">
+      <nav class="navbar navbar-expand-lg navbar-light  w-100 " style="background-color:  rgb(156,75,235);">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" width="154" height="36" class="d-inline-block align-top" alt="">
+          
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav col-sm-10 ml-3 m-md-2">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="gioithieu.html"><i class="fas fa-info"></i> Giới Thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lienhe.html"><i class="fas fa-phone"></i> Liên Hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gopy.html"><i class="fas fa-comments"></i> Góp Ý</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hoidap.html"><i class="fas fa-question-circle"></i> Hỏi Đáp</a>
+            </li>
+          </ul>
+            <ul class="navbar-nav col-sm-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle float-sm-right" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i> {{taiKhoan}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="login.html">Đăng Nhập</a>
+                <a class="dropdown-item" href="forgotPassword.html">Quên Mật Khẩu</a>
+                <a class="dropdown-item" href="register.html">Đăng Kí Thành Viên</a>
+                <a class="dropdown-item" href="#"></a>
+                <a class="dropdown-item" href="#">Đăng Xuất</a>
+                <a class="dropdown-item" href="doimatkhau.html">Đổi Mật Khẩu</a>
+                <a class="dropdown-item" href="doithongtintaikhoan.html">Cập Nhập Tài khoản</a>
+                
+                
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+    <header class="row">
+      <div class="col-sm-6">
+        <img  src="images/Untitled-1.png">
+      </div>
+      <div class="col-sm-6">
+      <img  src="images/edu_ilastration.png">
+    </div>
+    </header>
+    
+    <div class="row">
+      <article class="col-sm-9 ">
+        <div class="alert alert-secondary mt-3" style="font-size: 20px;" role="alert">
+          <a href="index.html" style="text-decoration: none;">Trang chủ</a> / Giới thiệu
+        </div>
+        <div class="col-10" style="margin-left: 100px;">
+          <h3 class="text-danger">Edumark</h3>
+          <div>
+            Edumark là dự án giáo dục trực tuyến được sáng lập bởi ông Lê Hồng Minh, CEO của công ty VNG, và được phát triển bởi Quỹ Cộng đồng người sử dụng Internet Việt Nam (VNIF) cùng những thầy cô tâm huyết, mong muốn cải thiện nền giáo dục Việt Nam.
+          </div>
+          <div class="row">
+            <div class="col-6 pl-5">
+              <img src="images/VNG_logoorange.png" height="115px" width="250px">
+            </div>
+            <div class="col-6">
+              <img src="images/vnif_logo.png" height="105px" width="220px">
+            </div>
+          </div>
+          <div>
+            Dự án nhằm mục tiêu tạo ra môi trường dạy và học mở cho tất cả công dân Việt Nam với phương châm ai cũng có thể dạy và học theo cách mình muốn, từ đó rút ngắn khoảng cách giáo dục giữa các vùng miền trên khắp đất nước thông qua Internet. Qua đó hướng tới thay đổi thói quen người Việt Nam khi sử dụng Internet để học tập, nâng cao kiến thức.
+            <br/>
+            <br/>
+            Với phương châm đó, Cổng giáo dục trực tuyến tương tác mở Edumark cung cấp cho người dùng một nền tảng mở với đầy đủ các phương tiện để dạy và học một hiệu quả nhất:
+          </div>
+          <div class="mt-4">
+            <h3 class="text-danger">Khoá học</h3>
+          </div>
+          <div>
+            Khóa học được thiết kế để giảng viên có thể dạy học theo nhiều cách khác nhau, tùy thuộc vào mức độ sáng tạo của mình: video bài giảng, tài liệu tham khảo, các bài kiểm tra ở nhiều cấp độ khác nhau, nhiều hình thức khác nhau (tự luận, trắc nghiệm, chấm bài trực tiếp).
+            <br/>
+            <br/>
+            Trong mỗi khóa học, Edumark đều thiết kế các tính năng hỗ trợ người dùng tương tác tốt hơn như chức năng gửi thông báo tới học viên, khu vực trao đổi thảo luận chung cho khóa học và riêng cho từng bài học. Nhờ đó, Edumark đem đến một môi trường học tập sôi động và có tính chia sẻ cao cho cả học sinh lẫn thầy cô. Mỗi lớp học không còn là 1 thầy - 40 trò nữa, mỗi khóa học được thiết kế theo mô hình “n thầy - m trợ giảng - p trò” sẽ tạo điều kiện tốt nhất cho mỗi tương tác trên khóa học.
+          </div>
+          <div class="mt-4">
+            <h3 class="text-danger">Phòng thi thử</h3>
+          </div>
+          <div>
+            Hình thức làm bài thi trực tuyến mang tính tương tác cao với ngân hàng đề thi thử miễn phí khổng lồ. Các đề thi được thiết kế dưới dạng phòng thi thử có đồng hồ tính giờ và thí sinh có thể biết đáp án hoặc điểm số ngay sau khi hoàn thành bài thi.
+            <br/>
+            <br/>
+            Bất cứ  nào cũng có thể tham gia đóng góp đề thi thử, đề kiểm tra trên lớp của thầy cô, của trường mà mình thu thập được bằng cách gửi tới hòm mail support@edumark.vn.
+          </div>
+          <div class="mt-4">
+            <h3 class="text-danger">Phòng hỏi đáp</h3>
+          </div>
+          <div>
+            Phòng hỏi đáp là nơi các thành viên Zuni có thể đưa ra các câu hỏi về kiến thức, bài tập khó, kinh nghiệm thi cử học tập để nhận được câu trả lời từ chính các thành viên khác.
+            <br/>
+            <br/>
+            Để hỗ trợ việc trả lời thắc mắc trong mục Hỏi đáp cũng như trong các bài giảng, Zuni đã thành lập câu lạc bộ tình nguyện viên gồm các thủ khoa, á khoa đại học và sinh viên giỏi - những người luôn sẵn sàng hỗ trợ học viên trên website 24/7.
+            <br/>
+            <br/>
+            Cộng đồng ngày càng mở rộng với các bạn học sinh trên cả nước cùng tham gia thảo luận vừa giúp đỡ các bạn khác, vừa học hỏi kiến thức mới và củng cố kiến thức cũ. Ngoài ra, học sinh còn có cơ hội làm quen, kết bạn với rất nhiều bạn ham học và tài năng, tạo nên một môi trường học tập lành mạnh cùng nhau tiến bộ.
+            <br/>
+            <br/>
+            Hiện tại, dự án đã phát triển mảng kiến thức Ôn thi Đại học và đang tiến hành mở rộng nội dung ra nhiều mảng khác như kiến thức lớp 1-12, tiếng anh, kĩ năng mềm, kiến thức chuyên ngành.
+          </div>
+        </div>
+        
+      </article>
+      <aside class="col-sm-3">
+        <div class="card mt-1 ml-n2 mr-n2 ">
+          <div class="card-header bg-danger" style="color: mintcream; font-weight: bold;"><i class="fas fa-list pr-3"></i> DANH MỤC MÔN HỌC</div>
+          <div class="card-body p-0">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="x in list">
+                <a href="#" id="linkref"><img src="logos/{{x.Logo}}" class="float-left col-3" />
+                <span class="">{{x.Name}}</span></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <footer class="row">
+      <div class="card-footer bg-dark w-100">
+        <p class="abcc">Cao Đẳng FPT Polytechnic</p>
+        </div>
+    </footer>
+  </div>
+  <script src="js/jquery-3.3.1.min.js"> </script>
+<script src="js/popper.min.js" > </script>
+<script src="js/bootstrap.min.js"> </script>
+
+</body>
+
+</html>
+<script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope, $http) {
+          // lấy vị tri index của user
+          var viTri = 0;
+          if ( typeof(Storage) !== "undefined") {
+            //get sessionStorage
+            var viTri  =  sessionStorage.getItem('index');      
+        } else {
+            alert('Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!');
+        }
+          // get list môn học
+          $scope.list = [];
+          $http.get("db/Subjects.js").then(function(d){
+                $scope.list = d.data;
+            });
+          // get list sinh vien
+          $scope.student = {};
+          $scope.students = [];
+          $http.get("db/Students.js").then(function(d){
+                $scope.students = d.data;
+                if(viTri == null ){
+              $scope.taiKhoan = "Tài Khoản";
+            }else {
+              $scope.taiKhoan = $scope.students[viTri].fullname
+            }
+            });
+    });
+</script>

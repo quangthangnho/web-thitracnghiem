@@ -1,0 +1,41 @@
+
+header{
+    height: 650px;
+    padding-top: 60px;
+    background-image: url(../images/banner.png);
+    
+}
+nav.row{
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    
+    
+}
+article{
+    height: 100px;
+    
+}
+aside{
+    min-height: 30px;
+    
+}
+footer{
+    height: 30px;
+    background-color: violet;
+}
+
+a#linkref{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+a#linkref:hover {
+    color: crimson;
+    
+}
+
+

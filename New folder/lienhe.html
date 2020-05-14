@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="stylesheet" href="css/footer.css">
+  <title>Edu Mark</title>
+</head>
+
+<body ng-app="myapp">
+  <div class="container-fluid" ng-controller="myctrl">
+    <nav class="row" ng-include="'trangcon/Menu.html'">
+      
+    </nav>
+    <header class="row" ng-include="'trangcon/Header.html'">
+      
+    </header>
+
+    <div class="row">
+      <article class="col-sm-9 ">
+        <div class="alert alert-secondary mt-3" style="font-size: 20px;" role="alert">
+          <a href="index.html" style="text-decoration: none;">Trang chủ</a> / Liên hệ
+        </div>
+        <div class="row ml-2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15676.518705958708!2d106.67228166387197!3d10.80137880450796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d35939c66f%3A0xe52e3ed732b15272!2zVHLGsOG7nW5nIENhbyDEkOG6s25nIFRo4buxYyBow6BuaCBGUFQgUG9seXRlY2huaWMgKENTMSk!5e0!3m2!1svi!2s!4v1587221291011!5m2!1svi!2s"
+            width="970" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0">
+          </iframe>
+        </div>
+        <div class="row" style="margin-top: 80px;">
+          <div class="col-7">
+            <div class="col-8" style="padding-left: 50px;">
+              <h3>Gởi thông tin liên hệ</h3>
+              <form>
+                <div class="row1">
+                  <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input class="form-control" required>
+                  </div>
+                </div>
+                <div class="row1">
+
+                  <label>Email</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" required>
+                  </div>
+                  <div class="row1">
+
+                    <label>Số điện thoại</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                      </div>
+                      <input type="number" class="form-control" required>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="row1">
+                  <div class="form-group">
+                    <label>Tiêu đề liên hệ</label>
+                    <input class="form-control" required>
+                  </div>
+                </div>
+                <div class="row1">
+                  <div class="form-group">
+                    <label>Nội dung liên hệ</label>
+                    <textarea class="form-control" rows="8" required></textarea>
+                  </div>
+                </div>
+                <div class="row1">
+                  <div class="form-group">
+                    <button class="btn btn-default form-control bg-danger">Gởi thông tin</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-5 ">
+            <div class="text-center">
+              <img src="https://static.mservice.io/styles/desktop/images/linehe/house.svg" height="80px" width="80px">
+            </div>
+            <div>
+              <h3 class="text-center">Địa chỉ</h3>
+            </div>
+            <div class="text-danger ">
+              Cơ sở Hà Nội
+            </div>
+            <div>
+              <i class="fas fa-map-marked-alt"></i> Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội.
+            </div>
+            <div>
+              <i class="fas fa-phone"></i> (024) 7300 1955
+            </div>
+            <hr />
+            <div class="text-danger ">
+              Cơ sở Đà Nẵng
+            </div>
+            <div>
+              <i class="fas fa-map-marked-alt"></i> Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà
+              Nẵng.
+            </div>
+            <div>
+              <i class="fas fa-phone"></i> (0236) 3710 999
+            </div>
+            <hr />
+            <div class="text-danger ">
+              Cơ sở Hồ Chí Minh
+            </div>
+            <div>
+              <i class="fas fa-map-marked-alt"></i> 391A Nam Kỳ Khởi Nghĩa, Q. 3, TP. Hồ Chí Minh.
+            </div>
+            <div>
+              <i class="fas fa-phone"></i> (028) 3526 8799 – (028) 62523434
+            </div>
+            <div>
+              <i class="fas fa-map-marked-alt"></i> 778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh.
+            </div>
+            <div>
+              <i class="fas fa-phone"></i> (028) 3526 8799 – (028) 62523434
+            </div>
+            <hr />
+
+          </div>
+        </div>
+      </article>
+      <aside class="col-sm-3" ng-include="'trangcon/danhmuc.html'">
+        
+      </aside>
+    </div>
+    <footer class="new_footer_area bg_color"  ng-include="'trangcon/Footer.html'">
+      
+    </footer>
+  </div>
+  <script src="js/jquery-3.3.1.min.js"> </script>
+  <script src="js/popper.min.js"> </script>
+  <script src="js/bootstrap.min.js"> </script>
+
+</body>
+
+</html>
+<script>
+  var app = angular.module("myapp", []);
+  app.controller("myctrl", function ($scope, $http) {
+     // lấy vị tri index của user
+     var viTri = 0;
+          if ( typeof(Storage) !== "undefined") {
+            //get sessionStorage
+            var viTri  =  sessionStorage.getItem('index');      
+        } else {
+            alert('Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!');
+        }
+          // get list môn học
+          $scope.list = [];
+          $http.get("db/Subjects.js").then(function(d){
+                $scope.list = d.data;
+            });
+          // get list sinh vien
+          $scope.student = {};
+          $scope.students = [];
+          $http.get("db/Students.js").then(function(d){
+                $scope.students = d.data;
+                if(viTri == null ){
+              $scope.taiKhoan = "Tài Khoản";
+            }else {
+              $scope.taiKhoan = $scope.students[viTri].fullname
+            }
+            });
+            //end
+  });
+</script>

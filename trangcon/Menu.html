@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light  w-100 " style="background-color:  rgb(156,75,235);">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" width="154" height="36" class="d-inline-block align-top" alt="">
+          
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav col-sm-10 ml-3 m-md-2">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#!gioithieu"><i class="fas fa-info"></i> Giới Thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!lienhe"><i class="fas fa-phone"></i> Liên Hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!gopy"><i class="fas fa-comments"></i> Góp Ý</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!hoidap"><i class="fas fa-question-circle"></i> Hỏi Đáp</a>
+            </li>
+          </ul>
+            <ul class="navbar-nav col-sm-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle float-sm-right" href="" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i> {{taiKhoan}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" ng-show="alo" href="login.html">Đăng Nhập</a>
+                <a class="dropdown-item" ng-show="alo" href="register.html">Đăng Kí </a>
+                <a class="dropdown-item" ng-show="alo" href="#!/user/forgot">Quên Mật Khẩu</a>
+                
+                <a class="dropdown-item" href=""></a>
+                
+                <a class="dropdown-item" ng-show="alo1" href="#!/user/change">Đổi Mật Khẩu</a>
+                <a class="dropdown-item" ng-show="alo1" href="#!/user/profile">Cập Nhập Tài khoản</a>
+                <a class="dropdown-item" ng-show="alo1" ng-click="logoff()" href="index.html">Đăng Xuất</a>
+                
+                
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </nav>

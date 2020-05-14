@@ -1,0 +1,12 @@
+<div class="card mt-1 ml-n2 mr-n2 ">
+    <div class="card-header bg-danger" style="color: mintcream; font-weight: bold;"><i class="fas fa-list pr-3"></i> DANH MỤC MÔN HỌC</div>
+    <div class="card-body p-0">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="x in list">
+          <a href="#!quiz/{{x.Id}}/{{x.Name}}" id="linkref"><img src="logos/{{x.Logo}}" class="float-left col-3" />
+          <span class="">{{x.Name}}</span></a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>

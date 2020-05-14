@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>Edu Mark</title>
+</head>
+
+<body ng-app="myapp" >
+  <div class="container" ng-controller="myctrl">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Register</h5>
+            <form class="form-signin" name="frmBonus">
+              <div class="form-label-group">
+                <input name="txtUsername" type="text" id="inputUserame" class="form-control" placeholder="Username" required  ng-model="student.username">   
+                <label for="inputUserame">Tên đăng nhập</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required ng-model="student.email">
+                <label for="inputEmail">Địa chỉ email</label>
+              </div>
+              <div class="form-label-group">
+                <input type="text" id="inputName" class="form-control" placeholder="Họ và tên" required ng-model="student.fullname">
+                <label for="inputName">Họ và tên</label>
+              </div>
+              <div class="form-label-group">
+                <input type="date" id="inputDate" class="form-control" placeholder="Ngày sinh" required ng-model="student.birthday">
+                <label for="inputDate">Ngày sinh</label>
+              </div>
+              <div class="form-label-group">
+                <select id="gioTinh" class="form-control" style="border-radius: 20px; height: 47px;" ng-model="student.gender">
+                  <option value="true">Nam</option>
+                  <option value="false">Nữ</option>
+                </select>
+                
+              </div>
+              <div class="form-label-group">
+                <input type="number" id="schoolFee" class="form-control" placeholder="Học phí" required ng-model="student.schoolfee">
+                <label for="schoolFee">Học phí</label>
+              </div>
+              <div class="form-label-group">
+                <input type="hidden" id="mark" class="form-control" value="0" ng-model="student.marks">
+                
+              </div>
+              
+              <hr>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Mật khẩu" required>
+                <label for="inputPassword">Mật khẩu</label>
+              </div>
+              
+              <div class="form-label-group">
+                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Xác nhận mật khẩu" required ng-model="student.password">
+                <label for="inputConfirmPassword">Xác nhận mật khẩu</label>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase"  ng-click="insert()">Đăng kí</button>
+              <a class="d-block text-center mt-2 small" href="login.html">Đăng nhập</a>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Đăng nhập với Google</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Đăng nhập với Facebook</button>
+            </form>
+            <!-- <table class="table table-bordered">
+              <tr>
+                  <th>Họ và tên</th>
+                  <th>Ngày sinh</th>
+                  <th>Điểm</th>
+                  <th>Xếp loại</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+              </tr>
+              <tr ng-repeat="st in students">
+                  <td>{{st.username}}</td>
+                  <td>{{st.password}}</td>
+                  <td>{{st.fullname}}</td>
+                  <td>{{st.email}}</td>
+                  <td>{{st.gender}}</td>
+                  <td>{{st.birthday}}</td>
+                  <td>{{st.schoolfee}}</td>
+                  <td>{{st.marks}}</td>
+              </tr>
+          </table> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="js/jquery-3.3.1.min.js"> </script>
+<script src="js/popper.min.js" > </script>
+<script src="js/bootstrap.min.js"> </script>
+
+</body>
+
+</html>
+<script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope, $http) {
+        // get list sinh vien
+        $scope.student = {};
+          $scope.students = [];
+          $http.get("db/Students.js").then(function(d){
+                $scope.students = d.data;
+            })
+        $scope.index = -1;
+        
+        $scope.clear = function () {
+            $scope.student = {};
+            $scope.index = -1;
+        }
+        $scope.insert = function () {
+            if($scope.student.username.length !=0 && 
+              $scope.student.password.length !=0 && 
+              $scope.student.fullname.length !=0 && 
+              $scope.student.email.length !=0 && 
+              $scope.student.gender.length !=0 && 
+              $scope.student.birthday.length !=0 && 
+              $scope.student.schoolfee.length !=0 ){
+                $scope.students.push(angular.copy($scope.student));
+                $scope.clear();
+                Swal.fire({
+                    title: 'Đăng kí thành công',
+                    icon: 'success',
+                    html:
+                      '',
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    focusConfirm: false,
+                    confirmButtonText:
+                      '<a href="login.html" style="color: white;"><i class="fa fa-thumbs-up"></i> Đồng ý!</a>',
+                    confirmButtonAriaLabel: 'Thumbs up, great!',
+                    cancelButtonText:
+                      '<i class="fa fa-thumbs-down"></i>',
+                    cancelButtonAriaLabel: 'Thumbs down'
+                  })
+              }else {
+                Swal.fire({
+                icon: 'error',
+                title: 'Lỗi...',
+                text: 'Vui lòng nhập hết tất cả thông tin!'
+                
+              })
+              }  
+        }
+        
+    });
+</script>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <title>Edu Mark</title>
+</head>
+
+<body ng-app="myapp" >
+  <div class="container-fluid" ng-controller="myctrl">
+    <nav class="row">
+      <nav class="navbar navbar-expand-lg navbar-light  w-100 " style="background-color:  rgb(156,75,235);">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" width="154" height="36" class="d-inline-block align-top" alt="">
+          
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav col-sm-10 ml-3 m-md-2">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="gioithieu.html"><i class="fas fa-info"></i> Giới Thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lienhe.html"><i class="fas fa-phone"></i> Liên Hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gopy.html"><i class="fas fa-comments"></i> Góp Ý</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hoidap.html"><i class="fas fa-question-circle"></i> Hỏi Đáp</a>
+            </li>
+          </ul>
+            <ul class="navbar-nav col-sm-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle float-sm-right" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i> {{taiKhoan}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="login.html">Đăng Nhập</a>
+                <a class="dropdown-item" href="forgotPassword.html">Quên Mật Khẩu</a>
+                <a class="dropdown-item" href="register.html">Đăng Kí Thành Viên</a>
+                <a class="dropdown-item" href="#"></a>
+                <a class="dropdown-item" href="#">Đăng Xuất</a>
+                <a class="dropdown-item" href="doimatkhau.html">Đổi Mật Khẩu</a>
+                <a class="dropdown-item" href="doithongtintaikhoan.html">Cập Nhập Tài khoản</a>
+                
+                
+              </div>
+
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+    <header class="row">
+      <div class="col-sm-6">
+        <img  src="images/Untitled-1.png">
+      </div>
+      <div class="col-sm-6">
+      <img  src="images/edu_ilastration.png">
+    </div>
+    </header>
+    
+    <div class="row">
+      <article class="col-sm-9 ">
+        <div class="alert alert-secondary mt-3" style="font-size: 20px;" role="alert">
+          <a href="index.html" style="text-decoration: none;">Trang chủ</a> / Hỏi Đáp
+        </div>
+        <div class="row m-1">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fab fa-btc"></i> Bootstrap là gì?
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  Bootstrap là một mã nguồn mở, là một framework có chứa các ngôn ngữ lập trình như HTML, CSS và Javascript, hay nói một cách dễ hiểu thì framewordk chính là khuôn khổ và việc bạn sử dụng các ngôn ngữ HTML, CSS và Javascript trong khuôn khổ mà Bootstrap cho sẵn, và khi đó sẽ giúp bạn tiết kiệm được rất nhiều thời gian, công sức và đặc biệt nhất là khi bạn xây dựng 2 template cho giao diện PC và Mobile đã lỗi thời, thay vào đó thì Responsive sẽ giúp web của bạn được hiển thị tốt nhất, giúp tương thích với mọi kích thước màn hình, và nhờ đó thì bạn có thể tuỳ biến hiển thị được nhiều hơn trên nhiều loại màn hình khác nhau.
+                  </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fab fa-angular"></i> Ưu điểm của Bootstrap?
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  Tiết kiệm nhiều thời gian viết code html vì nó cung cấp sẵn code mẫu để chèn vào trang web.
+                
+                  Tiết kiệm nhiều thời gian định dạng css vì nó tạo ra rất nhiều class css đã được định dạng sẵn.
+                 
+                  Tiết kiệm nhiều thời gian viết code javascript vì nó trang bị sẵn nhiều hiệu ứng javascript, giúp bạn khỏi viết code javascript.
+                
+                  Bootstrap tổ chức màn hình thành hệ thống lưới (Grid System) 12 cột, giúp bạn dễ tổ chức giao diện trang web theo ý mình.
+                
+                  Bootstrap cung cấp sẵn responsive phù hợp với mọi loại thiết bị như smartphone, tablet, desktop, …
+                  </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fab fa-angular"></i> AngularJS là gì?
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  AngularJS là một framework có cấu trúc cho các ứng dụng web động. Nó cho phép bạn sử dụng HTML cho phép bạn mở rộng cú pháp của HTML để diễn đạt các thành phần ứng dụng của bạn một cách rõ ràng và súc tích. Hai tính năng cốt lõi: Data binding và Dependency injection của AngularJS loại bỏ phần lớn code mà bạn thường phải viết.
+                 </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <i class="fab fa-php"></i> PHP là gì?
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                   PHP: Hypertext Preprocessor, thường được viết tắt thành PHP là một ngôn ngữ lập trình kịch bản hay một loại mã lệnh chủ yếu được dùng để phát triển các ứng dụng viết cho máy chủ, mã nguồn mở, dùng cho mục đích tổng quát. Nó rất thích hợp với web và có thể dễ dàng nhúng vào trang HTML. 
+                  <br/>
+                  <br/>
+                   Do được tối ưu hóa cho các ứng dụng web, tốc độ nhanh, nhỏ gọn, cú pháp giống C và Java, dễ học và thời gian xây dựng sản phẩm tương đối ngắn hơn so với các ngôn ngữ khác nên PHP đã nhanh chóng trở thành một ngôn ngữ lập trình web phổ biến nhất thế giới.
+                 </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFive">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <i class="fab fa-html5"></i> HTML là gì?
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                <div class="card-body">
+                  HTML viết tắt của Hypertext Markup Language là ngôn ngữ lập trình dùng để xây dựng và cấu trúc lại các thành phần có trong website. HTML tạm dịch là ngôn ngữ đánh dấu siêu văn bản. Người ta thường sử dụng HTML trong việc phân chia các đoạn văn, heading, links, blockquotes,…Vậy cấu trúc HTML của website là gì?</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingSix">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <i class="fab fa-css3-alt"></i> CSS là gì?
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div class="card-body">
+                  CSS là ngôn ngữ tạo phong cách cho trang web – Cascading Style Sheet language. Nó dùng để tạo phong cách và định kiểu cho những yếu tố được viết dưới dạng ngôn ngữ đánh dấu, như là HTML. Nó có thể điều khiển định dạng của nhiều trang web cùng lúc để tiết kiệm công sức cho người viết web. Nó phân biệt cách hiển thị của trang web với nội dung chính của trang bằng cách điều khiển bố cục, màu sắc, và font chữ.
+                  </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingSeven">
+                <h2 class="mb-0">
+                  <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    <i class="fab fa-node-js"></i> NodeJS là gì?
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                <div class="card-body">
+                  NodeJS là một mã nguồn được xây dựng dựa trên nền tảng Javascript V8 Engine, nó được sử dụng để xây dựng các ứng dụng web như các trang video clip, các forum và đặc biệt là trang mạng xã hội phạm vi hẹp. NodeJS là một mã nguồn mở được sử dụng rộng bởi hàng ngàn lập trình viên trên toàn thế giới.
+                  <br/>
+                  <br/>
+                  NodeJS có thể chạy trên nhiều nền tảng hệ điều hành khác nhau từ WIndow cho tới Linux, OS X nên đó cũng là một lợi thế. NodeJS cung cấp các thư viện phong phú ở dạng Javascript Module khác nhau giúp đơn giản hóa việc lập trình và giảm thời gian ở mức thấp nhất.
+                  </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingEight">
+              <h2 class="mb-0">
+                <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  <i class="fab fa-react"></i> React Native là gì?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+              <div class="card-body">
+                React Native là công nghệ được tạo bởi Facebook, cho phép các dev sử dụng JavaScript để làm mobile apps trên cả Android và iOS với cảm nhận và giao diện native. Một ví dụ để làm rõ cách vận hành của React Native là wrapper của code native. Có rất nhiều thành tố được tạo nên khi đang wrapping – “bọc” chức năng native của iOS hoặc Android. React Native đã đạt được rất nhiều traction kể từ ngày ra mắt vì nó đã thay đổi game về mặt cơ bản theo nhiều cách.
+                </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingNine">
+            <h2 class="mb-0">
+              <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                <i class="fab fa-js-square"></i> JavaScript là gì?
+              </button>
+            </h2>
+          </div>
+          <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+            <div class="card-body">
+              JavaScript, theo phiên bản hiện hành, là một ngôn ngữ lập trình thông dịch được phát triển từ các ý niệm nguyên mẫu. Ngôn ngữ này được dùng rộng rãi cho các trang web (phía người dùng) cũng như phía máy chủ (với Nodejs). Nó vốn được phát triển bởi Brendan Eich tại Hãng truyền thông Netscape với cái tên đầu tiên Mocha, rồi sau đó đổi tên thành LiveScript, và cuối cùng thành JavaScript. 
+              <br/>
+              <br/>
+              Giống Java, JavaScript có cú pháp tương tự C, nhưng nó gần với Self hơn Java. .js là phần mở rộng thường được dùng cho tập tin mã nguồn JavaScript.
+              </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTen">
+          <h2 class="mb-0">
+            <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+              <i class="fab fa-java"></i> JAVA là gì?
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+          <div class="card-body">
+            JAVA là một ngôn ngữ lập trình hướng đối tượng (OOP) và dựa trên các lớp (class)[9]. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã nguồn thành mã máy hoặc thông dịch mã nguồn khi chạy, Java được thiết kế để biên dịch mã nguồn thành bytecode, bytecode sau đó sẽ được môi trường thực thi (runtime environment) chạy.
+            <br/>
+            <br/>
+            Trước đây, Java chạy chậm hơn những ngôn ngữ dịch thẳng ra mã máy như C và C++, nhưng sau này nhờ công nghệ "biên dịch tại chỗ" - Just in time compilation, khoảng cách này đã được thu hẹp, và trong một số trường hợp đặc biệt Java có thể chạy nhanh hơn. Java chạy nhanh hơn những ngôn ngữ thông dịch như Python, Perl, PHP gấp nhiều lần. Java chạy tương đương so với C#, một ngôn ngữ khá tương đồng về mặt cú pháp và quá trình dịch/chạy
+            <br/>
+            <br/>
+            Cú pháp Java được vay mượn nhiều từ C & C++ nhưng có cú pháp hướng đối tượng đơn giản hơn và ít tính năng xử lý cấp thấp hơn. Do đó việc viết một chương trình bằng Java dễ hơn, đơn giản hơn, đỡ tốn công sửa lỗi hơn. Nhưng về lập trình hướng đối tượng thì Java phức tạp hơn.
+          </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="heading11">
+        <h2 class="mb-0">
+          <button style="text-decoration: none; color: black; font-size: 19px; font-weight: bold;" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+            <i class="fas fa-database"></i> Cơ sở dữ liệu là gì?
+          </button>
+        </h2>
+      </div>
+      <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordionExample">
+        <div class="card-body">
+          Cơ sở dữ liệu (Database) là một tập hợp các dữ liệu có tổ chức, thường được lưu trữ và truy cập điện tử từ hệ thống máy tính. Khi cơ sở dữ liệu phức tạp hơn, chúng thường được phát triển bằng cách sử dụng các kỹ thuật thiết kế và mô hình hóa chính thức.
+          <br/>
+          <br/>
+          Hệ quản lý cơ sở dữ liệu (Database Management System - DBMS) là phần mềm tương tác với người dùng cuối, ứng dụng và chính cơ sở dữ liệu để thu thập và phân tích dữ liệu. Phần mềm DBMS bao gồm các tiện ích cốt lõi được cung cấp để quản trị cơ sở dữ liệu. Tổng cộng của cơ sở dữ liệu, DBMS và các ứng dụng liên quan có thể được gọi là "hệ thống cơ sở dữ liệu". Thông thường thuật ngữ "cơ sở dữ liệu" cũng được sử dụng để nói đến bất kỳ DBMS, hệ thống cơ sở dữ liệu hoặc ứng dụng nào được liên kết với cơ sở dữ liệu.
+          <br/>
+          <br/>
+          Các nhà khoa học máy tính có thể phân loại các hệ thống quản lý cơ sở dữ liệu theo các mô hình cơ sở dữ liệu mà họ hỗ trợ. Cơ sở dữ liệu quan hệ đã trở nên thống trị trong những năm 1980. Những dữ liệu mô hình này dưới dạng các hàng và cột trong một loạt các bảng và phần lớn sử dụng SQL (Structured Query Language - ngôn ngữ truy vấn cấu trúc) để ghi và truy vấn dữ liệu. Vào những năm 2000, các cơ sở dữ liệu phi quan hệ đã trở nên phổ biến, được gọi là NoSQL vì chúng sử dụng các ngôn ngữ truy vấn khác.
+          </div>
+    </div>
+  </div>
+        </div>
+      </article>
+      <aside class="col-sm-3">
+        <div class="card mt-1 ml-n2 mr-n2 ">
+          <div class="card-header bg-danger" style="color: mintcream; font-weight: bold;"><i class="fas fa-list pr-3"></i> DANH MỤC MÔN HỌC</div>
+          <div class="card-body p-0">
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="x in list">
+                <a href="#" id="linkref"><img src="logos/{{x.Logo}}" class="float-left col-3" />
+                <span class="">{{x.Name}}</span></a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <footer class="row">
+      <div class="card-footer bg-dark w-100">
+        <p class="abcc">Cao Đẳng FPT Polytechnic</p>
+        </div>
+    </footer>
+  </div>
+  <script src="js/jquery-3.3.1.min.js"> </script>
+<script src="js/popper.min.js" > </script>
+<script src="js/bootstrap.min.js"> </script>
+
+</body>
+
+</html>
+<script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope, $http) {
+           // lấy vị tri index của user
+           var viTri = 0;
+          if ( typeof(Storage) !== "undefined") {
+            //get sessionStorage
+            var viTri  =  sessionStorage.getItem('index');      
+        } else {
+            alert('Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!');
+        }
+          // get list môn học
+          $scope.list = [];
+          $http.get("db/Subjects.js").then(function(d){
+                $scope.list = d.data;
+            });
+          // get list sinh vien
+          $scope.student = {};
+          $scope.students = [];
+          $http.get("db/Students.js").then(function(d){
+                $scope.students = d.data;
+                if(viTri == null ){
+              $scope.taiKhoan = "Tài Khoản";
+            }else {
+              $scope.taiKhoan = $scope.students[viTri].fullname
+            }
+            });
+            //end
+    });
+</script>

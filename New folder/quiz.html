@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="stylesheet" href="css/footer.css">
+  <title>Edu Mark</title>
+</head>
+
+<body ng-app="myapp" >
+  <div class="container-fluid" ng-controller="myctrl">
+    <nav class="row" ng-include="'trangcon/Menu.html'">
+      
+    </nav>
+    <header class="row" ng-include="'trangcon/Header.html'">
+      
+    </header>
+    
+    <div class="row">
+      <article class="col-sm-9 ">
+        <div class="alert alert-secondary mt-3" style="font-size: 20px;" role="alert">
+          <a href="index.html" style="text-decoration: none;">Trang chủ</a> / Lập trình Android nâng cao
+        </div>
+          <form>
+            <div class="card">
+              <div class="card-header  text-center">
+                <h5><i class="fab fa-android"></i> Lập trình Android nâng cao</h>
+              </div>
+              <div class="card-body ml-5" ng-repeat="quiz in quizzz | limitTo:1:begin">
+                <div class="row">
+                  <h5 class="card-title col-10">{{begin+1}}. {{quiz.Text}}</h5>
+                  <div class="col-2 "><span class="badge badge-danger">Điểm: {{diem}}</span></div>
+                  <input type="hidden" id="myinput" value="{{quiz.AnswerId}}" />
+                </div>
+                <hr/>
+                <div class="row1" ng-repeat="quizs in quiz.Answers | limitTo:4:0">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" ng-model="dapAn.checked" value="{{quizs.Id}}">
+                    <label class="form-check-label" for="exampleRadios1">
+                      {{quizs.Text}}
+                    </label>
+                  </div>
+                </div>
+                <input type="hidden" id="myinput1" value="{{dapAn.checked}}">
+                <br/>
+                <button class="btn btn-default bg-danger float-right" ng-click="kiemTra($indexx)" ng-disabled="indexx==1">Trả lời</button>
+              </div>
+              <div class="card-footer text-muted">
+                <nav aria-label="Page navigation example" style="margin-left: 320px;">
+                  <ul class="pagination ">
+                    <li class="page-item"><a class="page-link" href="#" ng-click="first()">First</a></li>
+                    <li class="page-item"><a class="page-link" href="#" ng-click="prev()">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#" ng-click="next()">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="#" ng-click="last()">Last</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </form>
+      </article>
+      <aside class="col-sm-3" ng-include="'trangcon/danhmuc.html'">
+        
+      </aside>
+    </div>
+    <footer class="new_footer_area bg_color"  ng-include="'trangcon/Footer.html'">
+      
+    </footer>
+  </div>
+  <script src="js/jquery-3.3.1.min.js"> </script>
+<script src="js/popper.min.js" > </script>
+<script src="js/bootstrap.min.js"> </script>
+
+</body>
+
+</html>
+<script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope, $http) {
+          $scope.quizzz = [];
+          $http.get("db/Quizs/ADAV.js").then(function(d){
+                $scope.quizzz = d.data;
+            })
+          $scope.begin = 0;
+          $scope.diem = 0;
+          $scope.tl = false;
+           // lấy vị tri index của user
+           var viTri = 0;
+          if ( typeof(Storage) !== "undefined") {
+            //get sessionStorage
+            var viTri  =  sessionStorage.getItem('index');      
+        } else {
+            alert('Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!');
+        }
+          // get list môn học
+          $scope.list = [];
+          $http.get("db/Subjects.js").then(function(d){
+                $scope.list = d.data;
+            });
+          // get list sinh vien
+          $scope.student = {};
+          $scope.students = [];
+          $http.get("db/Students.js").then(function(d){
+                $scope.students = d.data;
+                if(viTri == null ){
+              $scope.taiKhoan = "Tài Khoản";
+            }else {
+              $scope.taiKhoan = $scope.students[viTri].fullname
+            }
+            });
+            //end
+        ////-------------
+        $scope.first = function() {
+                $scope.begin = 0;
+                $scope.indexx = 0;
+            }
+            $scope.prev = function() {
+                if($scope.begin > 0){
+                    $scope.begin -= 1;
+                }
+                $scope.indexx = 0;
+            }
+            $scope.next = function() {
+                if($scope.begin < (Math.ceil($scope.quizzz.length / 1) - 1)* 1){
+                    $scope.begin += 1;
+                }
+                $scope.indexx = 0;
+            }
+            $scope.last = function() {
+                $scope.begin = (Math.ceil($scope.quizzz.length / 1) - 1) * 1;
+                $scope.indexx = 0;
+            }
+            var a = $scope.dapAn = {checked: ""};
+            $scope.indexx = 0;
+            $scope.kiemTra = function(indexx){
+              var b =  $("#myinput1").val();
+              var c =  $("#myinput").val();
+              if(parseInt(c) == parseInt(b)){
+                Swal.fire(
+                  'Chính xác!',
+                  'Bạn đã trả lời đúng!',
+                  'success'
+                )
+                $scope.diem = $scope.diem + 1;
+                $scope.tl = true;
+              }else{
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Sai mất rồi...',
+                  text: 'Bạn đã trả lời sai!'
+                })
+                $scope.tl = true;
+              }
+              $scope.indexx = 1;
+              }
+             
+                
+              
+            
+            
+    });
+</script>
